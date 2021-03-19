@@ -1,6 +1,6 @@
 {
   "name": "use-color-thief",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A react hook version of the package Color Thief, which generates color palettes from images",
   "source": "src/index.js",
   "main": "dist/use-color-thief.js",

@@ -1,0 +1,58 @@
+{
+  "name": "use-color-thief",
+  "version": "1.0.1",
+  "description": "A react hook version of the package Color Thief, which generates color palettes from images",
+  "main": "dist/use-color-thief.cjs.js",
+  "module": "dist/use-color-thief.esm.js",
+  "browser": "dist/use-color-thief.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csandman/use-color-thief.git"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "hooks",
+    "useColorThief",
+    "color",
+    "thief",
+    "color thief",
+    "palette",
+    "generator"
+  ],
+  "author": "Chris Sandvik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csandman/use-color-thief/issues"
+  },
+  "homepage": "https://github.com/csandman/use-color-thief#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/register": "^7.13.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "rollup": "^2.42.0",
+    "rollup-plugin-filesize": "^9.1.1"
+  },
+  "dependencies": {
+    "colorthief": "^2.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  }
+}

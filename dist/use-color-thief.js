@@ -24,11 +24,15 @@
     }); // Get the url to use for generating a palette
 
     react.useEffect(() => {
+      console.log('Fired source effect', source);
+
       if (source) {
         if (source.current && source.current instanceof HTMLImageElement) {
           const setCurrentSrc = () => {
-            if (source.current.currentSrc) {
-              setUrl(source.current.currentSrc);
+            console.log('setCurrentSrc');
+
+            if (source.current.src) {
+              setUrl(source.current.src);
             }
           };
 
@@ -51,14 +55,18 @@
     }, [source]); // When the image url changes, update the color and palette
 
     react.useEffect(() => {
+      console.log('Fired url effect', url);
       let isCurrent = true;
 
       if (url) {
+        console.log('URL is defined:', url);
         const img = new Image();
         img.crossOrigin = 'anonymous';
         img.referrerPolicy = 'no-referrer';
 
         const handleImageLoad = () => {
+          console.log('handleImageLoad');
+
           if (isCurrent) {
             const colorThief = new o();
             let color = colorThief.getColor(img, quality);

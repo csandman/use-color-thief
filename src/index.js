@@ -18,7 +18,6 @@ const useColorThief = (
 
   // Get the url to use for generating a palette
   useEffect(() => {
-    console.log('Fired source effect', source);
     if (source) {
       if (
         source.current &&
@@ -27,7 +26,6 @@ const useColorThief = (
         source.current.src !== window.location.href
       ) {
         const setCurrentSrc = () => {
-          console.log('setCurrentSrc');
           if (source.current.src) {
             setUrl(source.current.src);
           }
@@ -50,17 +48,14 @@ const useColorThief = (
 
   // When the image url changes, update the color and palette
   useEffect(() => {
-    console.log('Fired url effect', url);
     let isCurrent = true;
 
     if (url) {
-      console.log('URL is defined:', url);
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.referrerPolicy = 'no-referrer';
 
       const handleImageLoad = () => {
-        console.log('handleImageLoad');
         if (isCurrent) {
           const colorThief = new ColorThief();
 

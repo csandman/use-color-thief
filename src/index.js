@@ -21,8 +21,8 @@ const useColorThief = (
     if (source) {
       if (source.current && source.current instanceof HTMLImageElement) {
         const setCurrentSrc = () => {
-          if (source.current.currentSrc) {
-            setUrl(source.current.currentSrc);
+          if (source.current.src) {
+            setUrl(source.current.src);
           }
         };
         setCurrentSrc();

@@ -20,7 +20,12 @@ const useColorThief = (
   useEffect(() => {
     console.log('Fired source effect', source);
     if (source) {
-      if (source.current && source.current instanceof HTMLImageElement) {
+      if (
+        source.current &&
+        source.current instanceof HTMLImageElement &&
+        // When no url is passed, getting the 'src' attribute returns the page url
+        source.current.src !== window.location.href
+      ) {
         const setCurrentSrc = () => {
           console.log('setCurrentSrc');
           if (source.current.src) {

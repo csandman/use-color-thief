@@ -4,7 +4,7 @@ A [React Hook](https://reactjs.org/docs/hooks-intro.html) wrapper for the packag
 
 [![npm version](https://badge.fury.io/js/use-color-thief.svg)](https://www.npmjs.com/package/use-color-thief)
 [![npm downloads](https://badgen.net/npm/dt/use-color-thief)](https://www.npmjs.com/package/use-color-thief)
-[![npm downloads](https://badgen.net/bundlephobia/minzip/use-color-thief)](https://www.npmjs.com/package/use-color-thief)
+[![bundle size](https://badgen.net/bundlephobia/minzip/use-color-thief)](https://www.npmjs.com/package/use-color-thief)
 [![license](https://badgen.net/github/license/csandman/use-color-thief)](./LICENSE)
 
 ## Requirements
@@ -24,8 +24,7 @@ import useColorThief from 'use-color-thief';
 import { useEffect } from 'react';
 
 const MyComponent = () => {
-  const source =
-    'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+  const source = 'https://source.unsplash.com/random/1280x720';
 
   const { color, palette } = useColorThief(source, {
     format: 'hex',
@@ -38,20 +37,7 @@ const MyComponent = () => {
     console.log('Palette:', palette);
   }, [palette, color]);
 
-  if (!palette || !color) {
-    return null;
-  }
-
-  return (
-    <div>
-      <h2>Color</h2>
-      <p>{color}</p>
-      <h2>Palette</h2>
-      {palette.map((paletteColor) => (
-        <p key={paletteColor}>{paletteColor}</p>
-      ))}
-    </div>
-  );
+  return <div>{color}</div>;
 };
 
 export default MyComponent;
@@ -85,7 +71,7 @@ The image to grab the primary color and palette from. The source can be one of 3
 ```js
 const imgRef = useRef();
 
-return <img ref={imgRef} src="https://www.example.com/my-image.png />;
+return <img ref={imgRef} src="https://www.example.com/my-image.png" />;
 ```
 
 #### options

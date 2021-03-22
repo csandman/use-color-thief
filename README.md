@@ -7,6 +7,8 @@ A [React Hook](https://reactjs.org/docs/hooks-intro.html) wrapper for the packag
 [![bundle size](https://badgen.net/bundlephobia/minzip/use-color-thief)](https://www.npmjs.com/package/use-color-thief)
 [![license](https://badgen.net/github/license/csandman/use-color-thief)](./LICENSE)
 
+![example](./example.png)
+
 ## Requirements
 
 To use this package you must have at least [React version 16.8.0](https://github.com/facebook/react/releases/tag/v16.8.0) as that is when hooks were first added.
@@ -23,9 +25,9 @@ npm i -S use-color-thief
 import useColorThief from 'use-color-thief';
 import { useEffect } from 'react';
 
-const MyComponent = () => {
-  const source = 'https://source.unsplash.com/random/1280x720';
+const source = 'https://source.unsplash.com/random/1280x720';
 
+const MyComponent = () => {
   const { color, palette } = useColorThief(source, {
     format: 'hex',
     colorCount: 10,
@@ -70,6 +72,8 @@ The image to grab the primary color and palette from. The source can be one of 3
 
 ```js
 const imgRef = useRef();
+
+const results = useColorThief(imgRef);
 
 return <img ref={imgRef} src="https://www.example.com/my-image.png" />;
 ```

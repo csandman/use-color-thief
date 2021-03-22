@@ -7,7 +7,7 @@
   "module": "dist/use-color-thief.esm.js",
   "exports": "./dist/use-color-thief.modern.js",
   "unpkg": "dist/use-color-thief.umd.js",
-  "types": "dist/use-color-thief.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
     "start": "microbundle watch"

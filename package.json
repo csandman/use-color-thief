@@ -1,12 +1,13 @@
 {
   "name": "use-color-thief",
-  "version": "1.1.0",
+  "version": "1.2.0-beta.0",
   "description": "A react hook version of the package Color Thief, which generates color palettes from images",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/use-color-thief.js",
   "module": "dist/use-color-thief.esm.js",
   "exports": "./dist/use-color-thief.modern.js",
   "unpkg": "dist/use-color-thief.umd.js",
+  "types": "dist/use-color-thief.d.ts",
   "scripts": {
     "build": "microbundle",
     "start": "microbundle watch"
@@ -33,6 +34,7 @@
   },
   "homepage": "https://github.com/csandman/use-color-thief#readme",
   "devDependencies": {
+    "@types/react": "^17.0.3",
     "eslint": "^7.22.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -40,7 +42,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "microbundle": "^0.13.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
   },
   "dependencies": {
     "colorthief": "^2.3.2"

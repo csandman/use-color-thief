@@ -1,8 +1,6 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 import ColorThief from 'colorthief';
 
-export type ColorThiefSource = string | MutableRefObject<HTMLImageElement>;
-
 export type ColorThiefColor = Array<number> | string | null;
 
 export interface ColorThiefOptions {
@@ -32,12 +30,12 @@ const rgbToHex = (r: number, g: number, b: number): string => {
 /**
  * Gets a primary color and a color palette from an image ref or url
  *
- * @param {ColorThiefSource} source The source url or image ref to grab colors from
+ * @param {string | MutableRefObject<HTMLImageElement>} source The source url or image ref to grab colors from
  * @param {ColorThiefOptions} options The second number to add.
  * @returns {ColorThiefOutput} The resulting color and palette from the input image
  */
 const useColorThief = (
-  source: ColorThiefSource,
+  source: string | MutableRefObject<HTMLImageElement>,
   options: ColorThiefOptions
 ): ColorThiefOutput => {
   const { format = 'rgb', quality = 10, colorCount = 10 } = options;

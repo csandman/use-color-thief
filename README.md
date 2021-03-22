@@ -73,7 +73,7 @@ The image to grab the primary color and palette from. The source can be one of 3
 ```js
 const imgRef = useRef();
 
-const results = useColorThief(imgRef);
+const output = useColorThief(imgRef);
 
 return <img ref={imgRef} src="https://www.example.com/my-image.png" />;
 ```

@@ -3,8 +3,13 @@ import ColorThief from 'colorthief';
 
 export type ColorThiefColor = Array<number> | string | null;
 
+export enum FormatString {
+  rgb = 'rgb',
+  hex = 'hex',
+}
+
 export interface ColorThiefOptions {
-  format?: string;
+  format?: FormatString;
   quality?: number;
   colorCount?: number;
 }
@@ -28,10 +33,10 @@ const rgbToHex = (r: number, g: number, b: number): string => {
 };
 
 /**
- * Gets a primary color and a color palette from an image ref or url
+ * A hook to grab a primary color and a color palette from an image ref, url, or data url
  *
  * @param {string | MutableRefObject<HTMLImageElement>} source The source url or image ref to grab colors from
- * @param {ColorThiefOptions} options The second number to add.
+ * @param {ColorThiefOptions} options Options for generating colors, `format`, `colorCount`, and `quality`
  * @returns {ColorThiefOutput} The resulting color and palette from the input image
  */
 const useColorThief = (

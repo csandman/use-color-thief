@@ -46,9 +46,9 @@ const useColorThief = (
   const { format = 'rgb', quality = 10, colorCount = 10 } = options;
 
   const [url, setUrl] = useState('');
-  const [output, setOutput] = useState({
+  const [output, setOutput] = useState<ColorThiefOutput>({
     color: null,
-    palette: null,
+    palette: [],
   });
 
   // Get the url to use for generating a palette
@@ -101,8 +101,10 @@ const useColorThief = (
 
           if (format === 'hex') {
             const [r, g, b] = color;
-            color = rgbToHex(r, g, b);
-            palette = palette.map(([pr, pg, pb]) => rgbToHex(pr, pg, pb));
+            setOutput({
+              color: rgbToHex(r, g, b),
+              palette: palette.map(([pr, pg, pb]) => rgbToHex(pr, pg, pb)),
+            });
           }
 
           setOutput({ color, palette });

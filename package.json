@@ -2,15 +2,18 @@
   "name": "use-color-thief",
   "version": "1.2.0",
   "description": "A react hook version of the package Color Thief, which generates color palettes from images",
-  "source": "src/index.ts",
-  "main": "dist/use-color-thief.js",
-  "module": "dist/use-color-thief.esm.js",
-  "exports": "./dist/use-color-thief.modern.js",
-  "unpkg": "dist/use-color-thief.umd.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "microbundle",
-    "start": "microbundle watch"
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -34,19 +37,20 @@
   },
   "homepage": "https://github.com/csandman/use-color-thief#readme",
   "devDependencies": {
-    "@types/react": "^17.0.3",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "microbundle": "^0.13.0",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.3"
+    "@types/react": "^18.3.3",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.3.2",
+    "react": "^18.3.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
   },
   "dependencies": {
-    "colorthief": "^2.3.2"
+    "colorthief": "^2.4.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

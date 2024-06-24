@@ -3,13 +3,10 @@ import ColorThief from 'colorthief';
 
 export type ColorThiefColor = Array<number> | string | null;
 
-export enum FormatString {
-  rgb = 'rgb',
-  hex = 'hex',
-}
+export type ColorFormat = 'rgb' | 'hex';
 
 export interface ColorThiefOptions {
-  format?: FormatString;
+  format?: ColorFormat;
   quality?: number;
   colorCount?: number;
 }
@@ -100,14 +97,13 @@ const useColorThief = (
           let palette = colorThief.getPalette(img, colorCount, quality);
 
           if (format === 'hex') {
-            const [r, g, b] = color;
             setOutput({
-              color: rgbToHex(r, g, b),
-              palette: palette.map(([pr, pg, pb]) => rgbToHex(pr, pg, pb)),
+              color: rgbToHex(...color),
+              palette: palette.map((paletteColor) => rgbToHex(...paletteColor)),
             });
+          } else {
+            setOutput({ color, palette });
           }
-
-          setOutput({ color, palette });
 
           img.removeEventListener('load', handleImageLoad);
         }

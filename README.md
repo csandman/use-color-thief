@@ -118,10 +118,10 @@ Type: `Array[Array[Integer]]` or `Array[String]` - Default: `null`
 
 A palette from the image by clustering similar colors. The palette is returned as an array containing colors, each color matching the same format as the `output.color` value returned.
 
-## CodeSandbox Demos
+## Demos
 
 Each demo grabs a random image each time, so reload to see a different example output
 
-- [Get colors in hex format from http url](https://codesandbox.io/s/usecolorthief-url-example-wu31s?file=/src/App.js)
-- [Get colors in hex format from base64 data url](https://codesandbox.io/s/usecolorthief-data-url-example-36e7f?file=/src/App.js)
-- [Get colors in hex format from a React Ref](https://codesandbox.io/s/usecolorthief-ref-example-n1eym?file=/src/App.js)
+- [Get colors in hex format from http url](https://stackblitz.com/edit/vitejs-vite-t4j8vi?file=src%2FApp.tsx&terminal=dev)
+- [Get colors in hex format from base64 data url](https://stackblitz.com/edit/vitejs-vite-y26blf?file=src%2FApp.tsx&terminal=dev)
+- [Get colors in hex format from a React Ref](https://stackblitz.com/edit/vitejs-vite-mbrerz?file=src%2FApp.tsx&terminal=dev)
